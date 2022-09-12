@@ -1,0 +1,21 @@
+//tagname[@attribute='']
+//tagname[text()='']
+
+
+Contains
+//tagname[contains(@attribute,'')]
+//tagname[contains(text(),'')]
+
+
+Following: for checking below elements
+
+//tagname[@attribute='']/following::tagname
+//tagname[@attribute='']/following::tagname[@attribute='']
+
+
+Example: inspect and validate it chrome. ctrl+f
+//span[text()='PIM']
+//a[text()='Add Employee']
+
+
+//label[contains(text(),'Username')]
