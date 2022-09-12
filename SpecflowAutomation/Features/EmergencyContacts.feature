@@ -3,6 +3,7 @@ In order to reach the employee relation on emergency
 As an admin
 I should have access to add, edit, delete employee emergency contacts 
 
+#add emergency contact and verify it
 @high
 Scenario Outline: Add Emergency Contact
 	Given I have browser with orangehrm page
