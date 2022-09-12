@@ -4,6 +4,7 @@ In order to add,edit, delete employee records
 As an admin
 I want to modify the employee details in dashboard
 
+#add employee and verify
 @low @smoke
 Scenario Outline: Add Valid Employee
 	Given I have browser with orangehrm page
