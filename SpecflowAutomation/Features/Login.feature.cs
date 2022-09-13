@@ -83,7 +83,7 @@ namespace SpecflowAutomation.Features
 #line 7
 #line hidden
 #line 8
- testRunner.Given("I have browser with orangehrm page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have \'ff\' browser with orangehrm page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
         

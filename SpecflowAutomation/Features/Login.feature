@@ -5,7 +5,7 @@ Feature: Login
   I want to login into the portal 
 
 Background:
-	Given I have browser with orangehrm page
+	Given I have 'ff' browser with orangehrm page
 
 	@high @valid @smoke
 Scenario: Valid Credential

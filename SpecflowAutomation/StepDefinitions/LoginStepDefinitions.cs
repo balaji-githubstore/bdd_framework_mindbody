@@ -1,5 +1,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Firefox;
 using SpecflowAutomation.Hooks;
 using System;
 using TechTalk.SpecFlow;
@@ -10,6 +12,28 @@ namespace SpecflowAutomation.StepDefinitions
     [Binding]
     public class LoginStepDefinitions
     {
+
+        [Given(@"I have '([^']*)' browser with orangehrm page")]
+        public void GivenIHaveBrowserWithOrangehrmPage(string browser)
+        {
+            if(browser.Equals("edge"))
+            {
+                AutomationHooks.driver = new EdgeDriver();
+            }
+            else if (browser.Equals("ff"))
+            {
+                AutomationHooks.driver = new FirefoxDriver();
+            }
+            else
+            {
+                AutomationHooks.driver = new ChromeDriver();
+            }
+
+            AutomationHooks.driver.Manage().Window.Maximize();
+            AutomationHooks.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+            AutomationHooks.driver.Url = "https://opensource-demo.orangehrmlive.com/";
+        }
+
 
         [Given(@"I have browser with orangehrm page")]
         public void GivenIHaveBrowserWithOrangehrmPage()
