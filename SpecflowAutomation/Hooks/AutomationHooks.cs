@@ -6,8 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
+[assembly: CollectionBehavior(DisableTestParallelization = true)]
 namespace SpecflowAutomation.Hooks
 {
+    
     [Binding]
     public class AutomationHooks
     {

@@ -56,7 +56,7 @@ namespace SpecflowAutomation.StepDefinitions
         [Then(@"I should see the added records in the table")]
         public void ThenIShouldSeeTheAddedRecordsInTheTable()
         {
-
+            Thread.Sleep(5000);
             string actualData=AutomationHooks.driver.FindElement(By.XPath("//div[@class='oxd-table']")).Text;
 
             string expectedName = tbl.Rows[0]["name"];
