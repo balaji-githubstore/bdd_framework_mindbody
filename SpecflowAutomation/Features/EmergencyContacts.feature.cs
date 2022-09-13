@@ -87,7 +87,7 @@ namespace SpecflowAutomation.Features
         [Xunit.TraitAttribute("Category", "high")]
         [Xunit.InlineDataAttribute("Admin", "admin123", "Jack", "brother", "788", "88", "778", new string[0])]
         [Xunit.InlineDataAttribute("Admin", "admin123", "Kim", "Sister", "7883", "883", "7783", new string[0])]
-        public void AddEmergencyContact(string username, string password, string name, string relationship, string home_Phone, string mobile, string work_Phone, string[] exampleTags)
+        public void AddEmergencyContact(string username, string password, string contact_Name, string relationship, string home_Phone, string mobile, string work_Phone, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "high"};
@@ -99,13 +99,13 @@ namespace SpecflowAutomation.Features
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("username", username);
             argumentsOfScenario.Add("password", password);
-            argumentsOfScenario.Add("name", name);
+            argumentsOfScenario.Add("contact_name", contact_Name);
             argumentsOfScenario.Add("relationship", relationship);
             argumentsOfScenario.Add("home_phone", home_Phone);
             argumentsOfScenario.Add("mobile", mobile);
             argumentsOfScenario.Add("work_phone", work_Phone);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Emergency Contact", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 7
+#line 8
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -115,25 +115,25 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 8
+#line 9
  testRunner.Given("I have browser with orangehrm page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 9
+#line 10
  testRunner.When(string.Format("I enter username as \'{0}\'", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 10
+#line 11
  testRunner.And(string.Format("I enter password as \'{0}\'", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 11
+#line 12
  testRunner.And("I click on login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 12
+#line 13
  testRunner.And("I click on My Info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 13
+#line 14
  testRunner.And("I click on Emergency Contacts", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 14
+#line 15
  testRunner.And("I click on add Assigned Emergency Contacts", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -143,18 +143,18 @@ this.ScenarioInitialize(scenarioInfo);
                             "mobile",
                             "work_telephone"});
                 table1.AddRow(new string[] {
-                            string.Format("{0}", name),
+                            string.Format("{0}", contact_Name),
                             string.Format("{0}", relationship),
                             string.Format("{0}", home_Phone),
                             string.Format("{0}", mobile),
                             string.Format("{0}", work_Phone)});
-#line 15
+#line 16
  testRunner.And("I fill the emergency contact details", ((string)(null)), table1, "And ");
 #line hidden
-#line 18
+#line 19
  testRunner.And("I click on save emergency contact", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 19
+#line 20
  testRunner.Then("I should see the added records in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
