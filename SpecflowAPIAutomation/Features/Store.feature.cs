@@ -19,12 +19,14 @@ namespace SpecflowAPIAutomation.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [Xunit.TraitAttribute("Category", "store")]
     public partial class StoreShopFeature : object, Xunit.IClassFixture<StoreShopFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private static string[] featureTags = ((string[])(null));
+        private static string[] featureTags = new string[] {
+                "store"};
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
@@ -84,12 +86,14 @@ namespace SpecflowAPIAutomation.Features
         [Xunit.SkippableFactAttribute(DisplayName="Find Purchase Order By ID")]
         [Xunit.TraitAttribute("FeatureTitle", "StoreShop")]
         [Xunit.TraitAttribute("Description", "Find Purchase Order By ID")]
+        [Xunit.TraitAttribute("Category", "positive")]
         public void FindPurchaseOrderByID()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "positive"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Find Purchase Order By ID", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 7
+#line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -99,28 +103,38 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 8
-testRunner.Given("I have base url \'https://petstore.swagger.io/v2/\' and resourse \'store/order/102\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 9
-testRunner.When("I do the Get request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 10
-testRunner.Then("I should get the response as 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("I have base url \'https://petstore.swagger.io/v2/\' and resourse \'store/order/102\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 11
+ testRunner.When("I do the Get request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 12
+ testRunner.Then("I should get the response as 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Find Purchase Order By Non-Existing ID")]
+        [Xunit.SkippableTheoryAttribute(DisplayName="Find Purchase Order By Non-Existing ID")]
         [Xunit.TraitAttribute("FeatureTitle", "StoreShop")]
         [Xunit.TraitAttribute("Description", "Find Purchase Order By Non-Existing ID")]
-        public void FindPurchaseOrderByNon_ExistingID()
+        [Xunit.TraitAttribute("Category", "negative")]
+        [Xunit.InlineDataAttribute("store/order/102", new string[0])]
+        [Xunit.InlineDataAttribute("store/order/104", new string[0])]
+        public void FindPurchaseOrderByNon_ExistingID(string resource, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] @__tags = new string[] {
+                    "negative"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("resource", resource);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Find Purchase Order By Non-Existing ID", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 13
+#line 15
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -130,14 +144,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 14
-testRunner.Given("I have base url \'https://petstore.swagger.io/v2/\' and resourse \'store/order/102\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 15
-testRunner.When("I do the Get request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 16
-testRunner.Then("I should get the response as 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given(string.Format("I have base url \'https://petstore.swagger.io/v2/\' and resourse \'{0}\'", resource), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 17
+ testRunner.When("I do the Get request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 18
+ testRunner.Then("I should get the response as 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

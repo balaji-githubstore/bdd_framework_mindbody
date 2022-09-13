@@ -19,12 +19,14 @@ namespace SpecflowAPIAutomation.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [Xunit.TraitAttribute("Category", "petshop")]
     public partial class PetShopFeature : object, Xunit.IClassFixture<PetShopFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private static string[] featureTags = ((string[])(null));
+        private static string[] featureTags = new string[] {
+                "petshop"};
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
@@ -84,12 +86,14 @@ namespace SpecflowAPIAutomation.Features
         [Xunit.SkippableFactAttribute(DisplayName="Find Pet By PetId")]
         [Xunit.TraitAttribute("FeatureTitle", "PetShop")]
         [Xunit.TraitAttribute("Description", "Find Pet By PetId")]
+        [Xunit.TraitAttribute("Category", "positive")]
         public void FindPetByPetId()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "positive"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Find Pet By PetId", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 6
+#line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -99,31 +103,34 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
-testRunner.Given("I have base url \'https://petstore.swagger.io/v2/\' and resourse \'pet/102\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 8
-testRunner.When("I do the Get request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I have base url \'https://petstore.swagger.io/v2/\' and resourse \'pet/102\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
-testRunner.Then("I should get the response as 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I do the Get request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
-testRunner.And("I should get the pet details in json format", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("I should get the response as 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 11
+ testRunner.And("I should get the pet details in json format", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Find Pet By Invalid PetId")]
+        [Xunit.SkippableFactAttribute(DisplayName="Find Pet By Invalid PetId", Skip="Ignored")]
         [Xunit.TraitAttribute("FeatureTitle", "PetShop")]
         [Xunit.TraitAttribute("Description", "Find Pet By Invalid PetId")]
+        [Xunit.TraitAttribute("Category", "negative")]
         public void FindPetByInvalidPetId()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "negative",
+                    "ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Find Pet By Invalid PetId", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 12
+#line 14
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -133,17 +140,17 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 13
-testRunner.Given("I have base url \'https://petstore.swagger.io/v2/\' and resourse \'pet/-102\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 14
-testRunner.When("I do the Get request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 15
-testRunner.Then("I should get the response as 400", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("I have base url \'https://petstore.swagger.io/v2/\' and resourse \'pet/-102\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 16
-testRunner.And("I should get message as \'Invalid ID supplied\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I do the Get request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 17
+ testRunner.Then("I should get the response as 400", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 18
+ testRunner.And("I should get message as \'Invalid ID supplied\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -152,12 +159,14 @@ testRunner.And("I should get message as \'Invalid ID supplied\'", ((string)(null
         [Xunit.SkippableFactAttribute(DisplayName="Find pet by non-existing petId")]
         [Xunit.TraitAttribute("FeatureTitle", "PetShop")]
         [Xunit.TraitAttribute("Description", "Find pet by non-existing petId")]
+        [Xunit.TraitAttribute("Category", "negative")]
         public void FindPetByNon_ExistingPetId()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "negative"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Find pet by non-existing petId", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 18
+#line 21
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -167,17 +176,17 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 19
-testRunner.Given("I have base url \'https://petstore.swagger.io/v2/\' and resourse \'pet/1002\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 20
-testRunner.When("I do the Get request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 21
-testRunner.Then("I should get the response as 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
 #line 22
-testRunner.And("I should get message as \'Pet not found\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have base url \'https://petstore.swagger.io/v2/\' and resourse \'pet/1002\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 23
+ testRunner.When("I do the Get request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 24
+ testRunner.Then("I should get the response as 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 25
+ testRunner.And("I should get message as \'Pet not found\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -186,12 +195,14 @@ testRunner.And("I should get message as \'Pet not found\'", ((string)(null)), ((
         [Xunit.SkippableFactAttribute(DisplayName="Delete pet by petId")]
         [Xunit.TraitAttribute("FeatureTitle", "PetShop")]
         [Xunit.TraitAttribute("Description", "Delete pet by petId")]
+        [Xunit.TraitAttribute("Category", "positive")]
         public void DeletePetByPetId()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "positive"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete pet by petId", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 24
+#line 28
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -201,31 +212,34 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 25
-testRunner.Given("I have base url \'https://petstore.swagger.io/v2/\' and resourse \'pet/1022\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 29
+ testRunner.Given("I have base url \'https://petstore.swagger.io/v2/\' and resourse \'pet/1022\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 26
-testRunner.And("I need add api_key \'AK888\' in the header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
+ testRunner.And("I need add api_key \'AK888\' in the header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 27
-testRunner.When("I do the Delete request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 31
+ testRunner.When("I do the Delete request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 28
-testRunner.Then("I should get the response as 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 32
+ testRunner.Then("I should get the response as 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Delete pet by Invalid petId")]
+        [Xunit.SkippableFactAttribute(DisplayName="Delete pet by Invalid petId", Skip="Ignored")]
         [Xunit.TraitAttribute("FeatureTitle", "PetShop")]
         [Xunit.TraitAttribute("Description", "Delete pet by Invalid petId")]
+        [Xunit.TraitAttribute("Category", "negative")]
         public void DeletePetByInvalidPetId()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "negative",
+                    "ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete pet by Invalid petId", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 30
+#line 35
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -235,20 +249,20 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 31
-testRunner.Given("I have base url \'https://petstore.swagger.io/v2/\' and resourse \'pet/-102\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 36
+ testRunner.Given("I have base url \'https://petstore.swagger.io/v2/\' and resourse \'pet/-102\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 32
-testRunner.And("I need add api_key \'AK888\' in the header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 37
+ testRunner.And("I need add api_key \'AK888\' in the header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 33
-testRunner.When("I do the Delete request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 38
+ testRunner.When("I do the Delete request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 34
-testRunner.Then("I should get the response as 400", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 39
+ testRunner.Then("I should get the response as 400", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 35
-testRunner.And("I should get message as \'Invalid ID supplied\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 40
+ testRunner.And("I should get message as \'Invalid ID supplied\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -257,12 +271,14 @@ testRunner.And("I should get message as \'Invalid ID supplied\'", ((string)(null
         [Xunit.SkippableFactAttribute(DisplayName="Delete pet by non-existing petId")]
         [Xunit.TraitAttribute("FeatureTitle", "PetShop")]
         [Xunit.TraitAttribute("Description", "Delete pet by non-existing petId")]
+        [Xunit.TraitAttribute("Category", "negative")]
         public void DeletePetByNon_ExistingPetId()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "negative"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete pet by non-existing petId", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 37
+#line 43
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -272,20 +288,20 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 38
-testRunner.Given("I have base url \'https://petstore.swagger.io/v2/\' and resourse \'pet/1502\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 44
+ testRunner.Given("I have base url \'https://petstore.swagger.io/v2/\' and resourse \'pet/1502\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 39
-testRunner.And("I need add api_key \'AK888\' in the header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 45
+ testRunner.And("I need add api_key \'AK888\' in the header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 40
-testRunner.When("I do the Delete request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 46
+ testRunner.When("I do the Delete request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 41
-testRunner.Then("I should get the response as 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 47
+ testRunner.Then("I should get the response as 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 42
-testRunner.And("I should get message as \'Pet not found\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 48
+ testRunner.And("I should get message as \'Pet not found\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

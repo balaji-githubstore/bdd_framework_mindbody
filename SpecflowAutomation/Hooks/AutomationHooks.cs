@@ -15,6 +15,36 @@ namespace SpecflowAutomation.Hooks
     {
         public static IWebDriver driver;
 
+        [BeforeTestRun]
+        public static void Init()
+        {
+            //run only once at the beginnning 
+        }
+
+        [AfterTestRun]
+        public static void End()
+        {
+            //run only once at the end
+        }
+
+        [BeforeFeature]
+        public static void StartFeature()
+        {
+
+        }
+
+
+        [AfterFeature]
+        public static void EndFeature()
+        {
+
+        }
+
+        [BeforeScenario]
+        public void StartScenario()
+        {
+
+        }
 
         //runs after each scenario wether scenario passed or fail.  
         [AfterScenario]
@@ -26,6 +56,18 @@ namespace SpecflowAutomation.Hooks
             }
         }
 
+        [BeforeStep]
+        public void BeforeStep()
+        {
 
+        }
+
+        [AfterStep]
+        public void AfterStep()
+        {
+
+        }
+
+       
     }
 }
