@@ -12,54 +12,60 @@ namespace SpecflowAutomation.StepDefinitions
     [Binding]
     public class LoginStepDefinitions
     {
+        private AutomationHooks hooks;
+
+        public LoginStepDefinitions(AutomationHooks hooks)
+        {
+            this.hooks = hooks;
+        }
 
         [Given(@"I have '([^']*)' browser with orangehrm page")]
         public void GivenIHaveBrowserWithOrangehrmPage(string browser)
         {
             if(browser.Equals("edge"))
             {
-                AutomationHooks.driver = new EdgeDriver();
+                hooks.driver = new EdgeDriver();
             }
             else if (browser.Equals("ff"))
             {
-                AutomationHooks.driver = new FirefoxDriver();
+                hooks.driver = new FirefoxDriver();
             }
             else
             {
-                AutomationHooks.driver = new ChromeDriver();
+                hooks.driver = new ChromeDriver();
             }
 
-            AutomationHooks.driver.Manage().Window.Maximize();
-            AutomationHooks.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
-            AutomationHooks.driver.Url = "https://opensource-demo.orangehrmlive.com/";
+            hooks.driver.Manage().Window.Maximize();
+            hooks.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+            hooks.driver.Url = "https://opensource-demo.orangehrmlive.com/";
         }
 
 
         [Given(@"I have browser with orangehrm page")]
         public void GivenIHaveBrowserWithOrangehrmPage()
         {
-            AutomationHooks.driver = new ChromeDriver();
-            AutomationHooks.driver.Manage().Window.Maximize();
-            AutomationHooks.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
-            AutomationHooks.driver.Url = "https://opensource-demo.orangehrmlive.com/";
+            hooks.driver = new ChromeDriver();
+            hooks.driver.Manage().Window.Maximize();
+            hooks.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+            hooks.driver.Url = "https://opensource-demo.orangehrmlive.com/";
         }
 
         [When(@"I enter username as '([^']*)'")]
         public void WhenIEnterUsernameAs(string username)
         {
-            AutomationHooks.driver.FindElement(By.Name("username")).SendKeys(username);
+            hooks.driver.FindElement(By.Name("username")).SendKeys(username);
         }
 
         [When(@"I enter password as '([^']*)'")]
         public void WhenIEnterPasswordAs(string password)
         {
-            AutomationHooks.driver.FindElement(By.Name("password")).SendKeys(password);
+            hooks.driver.FindElement(By.Name("password")).SendKeys(password);
         }
 
         [When(@"I click on login")]
         public void WhenIClickOnLogin()
         {
-            AutomationHooks.driver.FindElement(By.CssSelector("button[type='submit']")).Click();
+            hooks.driver.FindElement(By.CssSelector("button[type='submit']")).Click();
         }
 
         [Then(@"I should be navigate to '([^']*)' dashboard screen")]
@@ -72,7 +78,7 @@ namespace SpecflowAutomation.StepDefinitions
         [Then(@"I should get error message as '([^']*)'")]
         public void ThenIShouldGetErrorMessageAs(string expectedError)
         {
-           string actualError= AutomationHooks.driver.FindElement(By.CssSelector(".oxd-alert-content-text")).Text;
+           string actualError = hooks.driver.FindElement(By.CssSelector(".oxd-alert-content-text")).Text;
            Assert.Equal(expectedError, actualError);
     
         }

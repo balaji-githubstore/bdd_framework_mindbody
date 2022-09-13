@@ -6,14 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 //final
-[assembly: CollectionBehavior(DisableTestParallelization = true)]
+//[assembly: CollectionBehavior(DisableTestParallelization = true)]
 namespace SpecflowAutomation.Hooks
 {
     
     [Binding]
     public class AutomationHooks
     {
-        public static IWebDriver driver;
+        public IWebDriver driver;
 
         [BeforeTestRun]
         public static void Init()
