@@ -1,0 +1,119 @@
+Requirements 
+Module 
+	Login 
+	Registration 
+	Profile Settings 
+	New Feeds 
+	....
+
+
+
+Registration 
+Once the user access the url--> 
+
+
+click on register
+Firstname, lastname, mobile number (10 digit), otp (6 digit), register
+
+
+registration successful 
+
+
+----------------
+
+Employee Management Portal 
+
+
+Role - Admin 
+features - add, edit, delete employee records 
+
+- writing acceptance testing 
+
+Write scenario for valid add employee - 
+Firstname, lastname, employee id, location, Photo, status (Active or inactive) and then
+add employee should navigate to employee dashboard with added records 
+
+
+
+Write scenario for adding the existing employee 
+
+Write scenario for Existing employee detail- 
+Firstname, lastname, employee id, location, Photo, status (Active or inactive) and then
+message should be displayed as "Employee already exist" 
+
+
+
+Write scenario for adding the employee with invalid data
+
+Write scenario for Existing employee detail- 
+Firstname, lastname, employee id, location, Photo, status (Active or inactive) and then
+message should be displayed as "Invalid Employee Data" 
+
+
+
+------------------------------------------------------
+
+
+john,john123
+peter,peter123
+saul,saul123
+
+----------------------------------------------
+John, Wick, 1001, Pune, profile_1001.png, Inactive
+Jimmy, Mcgill, 1002, Chennai, profile_1002.png, Active
+
+
+-----------------------
+
+john,john123,Invalid credentials
+saul,saul123,Invalid credentials
+
+
+-------------------------------------
+CSS
+ 
+
+#id 
+.classname
+tagname[attribute='']
+[attribute='']
+
+validate in chrome - inspect & ctrl+f 
+
+
+
+
+
+----
+
+ Add Emergency Contact 
+
+ 1. Login into the portal 
+ 2. My Info --> Emergency Contacts 
+ 3. add name, relationship, home telephone, work telephone, mobile
+ 4. verify the added name
+
+
+Jimmy, brother, 3444,554,5554
+Saul, Father, 43444,3554,25554
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
