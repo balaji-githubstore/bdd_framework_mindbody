@@ -9,6 +9,7 @@ namespace SpecflowAutomation.StepDefinitions
     
     public class EmergencyContactsStepDefinitions
     {
+        private static Table tbl;
         [When(@"I click on My Info")]
         public void WhenIClickOnMyInfo()
         {
@@ -31,6 +32,7 @@ namespace SpecflowAutomation.StepDefinitions
         [When(@"I fill the emergency contact details")]
         public void WhenIFillTheEmergencyContactDetails(Table table)
         {
+            tbl = table;
             string name = table.Rows[0]["name"];
             string relationship= table.Rows[0]["relationship"];
             string homeTelephone = table.Rows[0]["home_telephone"];
@@ -54,6 +56,12 @@ namespace SpecflowAutomation.StepDefinitions
         [Then(@"I should see the added records in the table")]
         public void ThenIShouldSeeTheAddedRecordsInTheTable()
         {
+
+            string actualData=AutomationHooks.driver.FindElement(By.XPath("//div[@class='oxd-table']")).Text;
+
+            string expectedName = tbl.Rows[0]["name"];
+            Assert.Contains(expectedName, actualData);
+            Assert.Contains(tbl.Rows[0]["relationship"], actualData);
         }
     }
 }
