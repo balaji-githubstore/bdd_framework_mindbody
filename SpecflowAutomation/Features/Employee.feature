@@ -7,7 +7,7 @@ I want to modify the employee details in dashboard
 #add employee and verify
 @low @smoke
 Scenario Outline: Add Valid Employee
-	Given I have browser with orangehrm page
+	Given I open browser with orangehrm page
 	When I enter username as '<username>'
 	And I enter password as '<password>'
 	And I click on login

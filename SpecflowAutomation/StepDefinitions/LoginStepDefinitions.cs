@@ -22,7 +22,7 @@ namespace SpecflowAutomation.StepDefinitions
         [Given(@"I have '([^']*)' browser with orangehrm page")]
         public void GivenIHaveBrowserWithOrangehrmPage(string browser)
         {
-            if(browser.Equals("edge"))
+            if (browser.Equals("edge"))
             {
                 hooks.driver = new EdgeDriver();
             }
@@ -42,12 +42,13 @@ namespace SpecflowAutomation.StepDefinitions
 
 
         [Given(@"I have browser with orangehrm page")]
+        [Given(@"I open browser with orangehrm page")]
         public void GivenIHaveBrowserWithOrangehrmPage()
         {
             hooks.driver = new ChromeDriver();
             hooks.driver.Manage().Window.Maximize();
             hooks.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
-            hooks.driver.Url = "https://opensource-demo.orangehrmlive.com/";
+            hooks.driver.Url = "https://opensource-demo.orangehrmlive.com/";   
         }
 
         [When(@"I enter username as '([^']*)'")]
@@ -72,15 +73,15 @@ namespace SpecflowAutomation.StepDefinitions
         public void ThenIShouldBeNavigateToDashboardScreen(string expectedValue)
         {
             Console.WriteLine(expectedValue);
-          
+
         }
 
         [Then(@"I should get error message as '([^']*)'")]
         public void ThenIShouldGetErrorMessageAs(string expectedError)
         {
-           string actualError = hooks.driver.FindElement(By.CssSelector(".oxd-alert-content-text")).Text;
-           Assert.Equal(expectedError, actualError);
-    
+            string actualError = hooks.driver.FindElement(By.CssSelector(".oxd-alert-content-text")).Text;
+            Assert.Equal(expectedError, actualError);
+
         }
 
     }
